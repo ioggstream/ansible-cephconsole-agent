@@ -1,0 +1,8 @@
+---
+# tasks file for cephconsole-agent
+
+- name: preliminary checks
+  import: checks.yml
+
+- name: Download and run agent script
+  shell: curl {{cephconsole_host}}}:8181/setup/agent/ | bash

@@ -1,0 +1,4 @@
+- name: Clocks are synchronized (ntpstat)
+  command: ntpstat
+  register: ntpstat_status
+

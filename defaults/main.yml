@@ -1,0 +1,3 @@
+---
+# defaults file for cephconsole-agent
+cephconsole_host: 10.0.0.7
