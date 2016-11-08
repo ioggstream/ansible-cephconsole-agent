@@ -1,4 +1,9 @@
+- name: ntpd started and enabled
+  service: name=ntpd state=started enabled=yes
+
 - name: Clocks are synchronized (ntpstat)
   command: ntpstat
   register: ntpstat_status
+
+
 

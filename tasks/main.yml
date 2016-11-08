@@ -2,7 +2,14 @@
 # tasks file for cephconsole-agent
 
 - name: preliminary checks
-  import: checks.yml
+  include: checks.yml
+
+- name: enable repositories
+  command: yum-config-manager --enablerepo={{item}}
+  with_items:
+    - rhel-7-server-rhscon-2-agent-rpms
+    - rhel-7-server-rhceph-2-mon-rpms
+    - rhel-7-server-rhceph-2-osd-rpms
 
 - name: Download and run agent script
   shell: curl {{cephconsole_host}}}:8181/setup/agent/ | bash
